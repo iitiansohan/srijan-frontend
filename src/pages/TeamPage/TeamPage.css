@@ -1,0 +1,19 @@
+.card-desc {
+  padding: 18px 22px;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  margin-top: 18px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 100; 
+  overflow: hidden;
+  background: linear-gradient(180deg, #08061E 0%, #301258 50%, #5C2A9A 100%);
+}
+
+/* Remove unwanted yellow bottom part */
+.card-desc::after {
+  content: none !important;
+}
