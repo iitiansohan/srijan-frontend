@@ -463,7 +463,7 @@ const teamSections = [
     members: [
       {
         name: "SOHAN",
-        surname: "ROY CHOUDHURY",
+        surname: "ROY CHOWDHURY",
         role: "Head",        
         img: img1,
         linkedin: "https://linkedin.com",
