@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import EventCard from "./EventCard";
+import { eventData } from "../../data/eventData"
 // import EventModal from "./EventModal";
 
 import ART from "./Images/ART.jpg";
@@ -11,7 +12,7 @@ import DRAMA from "./Images/DRAMA.jpg";
 import LITERACY from "./Images/LITERACY.jpg";
 import MUSIC from "./Images/MUSIC.jpg";
 
-export default function Display({ category , date }) {
+export default function Display({ category, date }) {
   const [allEvents, setAllEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -20,14 +21,20 @@ export default function Display({ category , date }) {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const url = category === "ALL"
-          ? "https://srijan-2026.onrender.com/api/v1/event/all"
-          : `https://srijan-2026.onrender.com/api/v1/event/category/${category}`;
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch events");
-        const data = await response.json();
-        setAllEvents(data.data);
-      } catch(err){
+        // const url = category === "ALL"
+        // ? "https://srijan-2026.onrender.com/api/v1/event/all"
+        // : `https://srijan-2026.onrender.com/api/v1/event/category/${category}`;
+        // const response = await fetch(url);
+        // if (!response.ok) throw new Error("Failed to fetch events");
+        // const data = await response.json();
+
+        const data = category === "ALL"
+          ? eventData
+          : eventData.filter(
+            (event) => event.event_category === category
+          );
+        setAllEvents(data);
+      } catch (err) {
         console.error("Error fetching events:", err);
         setAllEvents([]);
       }
