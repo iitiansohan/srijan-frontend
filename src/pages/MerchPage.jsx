@@ -2,10 +2,14 @@ import PageHeader from "../components/PageHeader/PageHeader";
 import Seo from "../components/Seo";
 import { motion } from "framer-motion";
 import MerchCard from "../components/MerchCard";
-import tshirtFront from "/tshirtFront.png"
-import tshirtBack from "/tshirtBack.png"
-import hoodieFront from "/hoodieFront.png"
-import hoodieBack from "/hoodieBack.png"
+import utilsImages from "../data/utilsImages";
+
+// Map images from utilsImages array
+const [
+  vite, tshirtFront, tshirtBack, textBackdrop, robots, right,
+  rhythmBasic, rhythmAdvanced, manifest, mandala, logo, left,
+  indexHtml, image1, image2, hoodieFront, hoodieBack
+] = utilsImages;
 
 function MerchPage() {
   const demoMerchs = [

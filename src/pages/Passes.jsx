@@ -1,14 +1,16 @@
 import './Passes.css';
 import PageHeader from '../components/PageHeader/PageHeader';
 import Seo from '../components/Seo';
-
-import rhythmBasic from '/rhythm.png';
-import grooveBasic from '/groove.png';
-import carnivalBasic from '/carnival.png';
-import rhythmAdvanced from '/rhythm-adv.png';
-import grooveAdvanced from '/groove-adv.png';
-import carnivalAdvanced from '/carnival-adv.png';
+import utilsImages from '../data/utilsImages';
 import { useEffect, useState } from 'react';
+
+// Map images from utilsImages array
+const [
+  vite, tshirtFront, tshirtBack, textBackdrop, robots, right,
+  rhythmBasic, rhythmAdvanced, manifest, mandala, logo, left,
+  indexHtml, image1, image2, hoodieFront, hoodieBack, heroBg,
+  grooveBasic, grooveAdvanced, carnivalBasic, carnivalAdvanced
+] = utilsImages;
 import { NavLink } from 'react-router';
 import axiosInstance from "../utils/axiosInstance";
 
