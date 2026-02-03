@@ -65,7 +65,7 @@ export function Profile() {
     try {
       // Encode the email
       const encodedEmail = encode(glamfestEmail);
-      
+
       // Generate QR code as data URL
       const qrDataUrl = await QRCode.toDataURL(encodedEmail, {
         width: 500,
@@ -242,7 +242,7 @@ export function Profile() {
               ⚠️ IMPORTANT: Valid Pass Registration
             </h2>
             <p className="text-white text-sm sm:text-base leading-relaxed">
-              You <strong className="text-[#FED000]">MUST</strong> register through the link (via mobile only) below to obtain a valid pass. 
+              You <strong className="text-[#FED000]">MUST</strong> register through the link (via mobile only) below to obtain a valid pass.
               This registration is <strong className="text-[#FED000]">mandatory</strong> to enter events and attend the star night.
             </p>
             <a
@@ -266,6 +266,10 @@ export function Profile() {
             >
               REGISTER FOR VALID PASS →
             </a>
+          </div>
+        </div>
+      )}
+
       {/* QR MODAL */}
       {showQRModal && (
         <div
