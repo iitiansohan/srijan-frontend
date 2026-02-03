@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./GalleryGrid.css";
-
-const images = import.meta.glob("/src/assets/Gallery/*.png", { eager: false });
+import { galleryImages } from "../../data/galleryImages";
 
 const orbs = [
   { size: 300, x: "15%", y: "20%", duration: 10, delay: 0 },
@@ -12,23 +11,7 @@ const orbs = [
 ];
 
 const GalleryGrid = () => {
-  const [imageArray, setImageArray] = React.useState([]);
-
-  React.useEffect(() => {
-  const loadImages = async () => {
-    const entries = Object.values(images);
-
-    const loaded = await Promise.all(
-      entries.map((load) =>
-        load().then((mod) => mod.default)
-      )
-    );
-
-    setImageArray(loaded);
-  };
-
-  loadImages();
-}, []);
+  const imageArray = galleryImages;
 
 
   const isLargeImage = (index) => {
