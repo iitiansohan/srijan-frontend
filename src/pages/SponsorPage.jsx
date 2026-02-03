@@ -9,7 +9,7 @@ const [
   titanImg, tatasteelImg, sparxImg, skodaImg, shellImg, seclImg, sbiImg, sailImg,
   relianceImg, redbullImg, realmeImg, powergridImg, pnbImg, pepsiImg, ongcImg,
   oilindiaImg, nclImg, mgImg, lenskartImg, krafton, jharkhandtourismImg, inshortsImg,
-  gailImg, essarImg, engineersparcelImg, dominosImg, cocacolaImg, coalindiaImg,
+gailImg, essarImg, engineersparcelImg, dominosImg, cocacolaImg, coalindiaImg,
   canarabankImg, buildersImg, bcclImg, ambujacementImg, adaniImg, abc1Img, myntra,
   glamfestImg
 ] = sponsorsImages;

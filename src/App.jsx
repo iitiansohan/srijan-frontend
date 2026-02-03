@@ -1,14 +1,12 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router";
-import Navbar from "./components/Navbar/Navbar";
 import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Footer from "./components/footer";
 import CurtainTransition from "./components/Curtain.jsx";
 import Passes from "./pages/Passes.jsx";  // ya jo bhi file name hai (Passes.jsx?)
 
 import HomePage from "./pages/HomePage";
-import GalleryPage from "./pages/Gallery";
 import EventPage from "./pages/EventPage/EventPage";
 import SponsorPage from "./pages/SponsorPage";
 import MerchPage from "./pages/MerchPage";
@@ -19,6 +17,7 @@ import AddEventPage from "./pages/EventPage/AddEventPage";
 
 import { ToastContainer } from "react-toastify";
 import textBackdropSrc from "./assets/text-backdrop.png";
+import QR from "./pages/QR.jsx";
 
 function App() {
   const location = useLocation();
@@ -86,7 +85,6 @@ function App() {
               />
             }
           />
-          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/events" element={<EventPage />} />
           <Route path="/passes" element={<Passes />} />  {/* ← YE NEW */}
           <Route path="/sponsors" element={<SponsorPage />} />
@@ -95,6 +93,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/add-event" element={<AddEventPage />} />
+          <Route path="/qr" element={<QR />}/>
         </Routes>
 
 
