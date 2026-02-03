@@ -21,8 +21,8 @@ export default function Display({ category , date }) {
     const fetchEvents = async () => {
       try {
         const url = category === "ALL"
-          ? "https://srijan-2026-o5bu.onrender.com/api/v1/event/all"
-          : `https://srijan-2026-o5bu.onrender.com/v1/event/category/${category}`;
+          ? "https://srijan-2026.onrender.com/api/v1/event/all"
+          : `https://srijan-2026.onrender.com/v1/event/category/${category}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to fetch events");
         const data = await response.json();
