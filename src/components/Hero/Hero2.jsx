@@ -12,7 +12,6 @@ import textBackdropSrc from "../../assets/text-backdrop.png";
 import darkCloudBottom from "../../assets/Dark Cloud Bottom.png";
 import lightCloudBottom from "../../assets/Light Cloud Bottom.png";
 import GradientInterval from "./GradientInterval";
-import Myntra from "/sponsers/Myntra.png"
 
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },
@@ -88,6 +87,8 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const targetDate = new Date("2026-02-05T00:00:00");
+
+  const Myntra = "https://res.cloudinary.com/djpqjisxv/image/upload/v1770052685/Myntra_d6eziq.png"
 
   const containerRef = useRef(null);
 
