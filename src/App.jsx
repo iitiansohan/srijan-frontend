@@ -17,6 +17,7 @@ import AddEventPage from "./pages/EventPage/AddEventPage";
 
 import { ToastContainer } from "react-toastify";
 import textBackdropSrc from "./assets/text-backdrop.png";
+import QR from "./pages/QR.jsx";
 
 function App() {
   const location = useLocation();
@@ -92,6 +93,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/add-event" element={<AddEventPage />} />
+          <Route path="/qr" element={<QR />}/>
         </Routes>
 
 

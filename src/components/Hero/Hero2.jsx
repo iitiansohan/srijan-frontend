@@ -450,6 +450,40 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
 
             >
               <CountdownTimer targetDate={targetDate} />
+              
+              {/* QR BUTTON */}
+              <motion.div
+                className="flex justify-center mt-6"
+                initial={{ opacity: skipAnimation ? 1 : 0, y: skipAnimation ? 0 : 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: skipAnimation ? 0 : 0.6,
+                  delay: skipAnimation ? 0 : 0.8,
+                }}
+              >
+                <NavLink
+                  to="/qr"
+                  className="
+                    bg-[#FED000] 
+                    text-black 
+                    px-8 
+                    py-3 
+                    rounded-xl 
+                    text-lg 
+                    font-['Cinzel Decorative']
+                    font-bold
+                    tracking-wider 
+                    hover:bg-yellow-400 
+                    transition-all
+                    duration-300
+                    hover:scale-105
+                    shadow-[0_0_20px_rgba(254,208,0,0.5)]
+                    hover:shadow-[0_0_30px_rgba(254,208,0,0.8)]
+                  "
+                >
+                  GENERATE GLAMFEST QR
+                </NavLink>
+              </motion.div>
             </motion.div>
           )}
 
@@ -486,8 +520,8 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                 }}
               >
 
-                <div className="relative">
-                  <p className="text-[#FED000] mb-4 text-md font-['Cinzel'] font-bold tracking-wider opacity-90 relative z-10 text-shadow-lg">
+                <div className="relative flex flex-col items-center">
+                  <p className="text-[#FED000] mb-2 sm:mb-4 text-xs sm:text-md font-['Cinzel'] font-bold tracking-wider opacity-90 relative z-10 text-shadow-lg">
                     TITLE SPONSOR
                   </p>
                   <div className="absolute inset-0 bg-[#FED000]/30 blur-3xl scale-125 animate-pulse" />
@@ -495,7 +529,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
                     <img
                       src={Myntra}
                       alt="Myntra - Title Sponsor"
-                      className="h-30 w-auto object-contain drop-shadow-[0_0_25px_rgba(254,208,0,0.6)] hover:h-31 transition-all duration-300 animate-logo-bounce"
+                      className="h-16 sm:h-24 md:h-30 w-auto object-contain drop-shadow-[0_0_25px_rgba(254,208,0,0.6)] hover:h-17 sm:hover:h-25 md:hover:h-31 transition-all duration-300 animate-logo-bounce"
                     />
                   </a>
                 </div>
