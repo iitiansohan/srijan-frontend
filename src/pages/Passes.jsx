@@ -129,7 +129,7 @@ function PassCard({ name, level, days, price, features, image, exclusions }) {
   //       throw new Error('Invalid package selection');
   //     }
 
-  //     const res = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/changeuserpackage", {
+  //     const res = await fetch("https://srijan-2026-o5bu.onrender.com/api/v1/hospitality/changeuserpackage", {
   //       method: "POST",
   //       headers: {
   //         "Content-Type": "application/json"
@@ -175,7 +175,7 @@ function PassCard({ name, level, days, price, features, image, exclusions }) {
   //       "order_id": order.id,
   //       "handler": async function (response) {
   //         try {
-  //           const verifyRes = await fetch("https://srijan-2026.onrender.com/api/v1/hospitality/verifypayment", {
+  //           const verifyRes = await fetch("https://srijan-2026-o5bu.onrender.com/api/v1/hospitality/verifypayment", {
   //             method: "POST",
   //             headers: {
   //               "Content-Type": "application/json"

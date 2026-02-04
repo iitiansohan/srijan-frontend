@@ -20,7 +20,7 @@
 //   //       onclose;
 //   //       try{
 //   //           const response = await fetch(
-//   //               `https://srijan-2026.onrender.com/api/v1/events/${eventData.id}/register`,
+//   //               `https://srijan-2026-o5bu.onrender.com/api/v1/events/${eventData.id}/register`,
 //   //               {
 //   //                 method: "POST",
 //   //                 headers: {

@@ -47,7 +47,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   async function getUser() {
     try {
       const res = await axios.get(
-        "https://srijan-2026.onrender.com/api/v1/user/current-user",
+        "https://srijan-2026-o5bu.onrender.com/api/v1/user/current-user",
         { withCredentials: true }
       );
       setUser(res.data.data.fullname);
@@ -59,7 +59,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   // async function logout() {
   //   try {
   //     await axios.get(
-  //       "https://srijan-2026.onrender.com/api/v1/user/logout",
+  //       "https://srijan-2026-o5bu.onrender.com//api/v1/user/logout",
   //       { withCredentials: true }
   //     );
   //     setUser("");

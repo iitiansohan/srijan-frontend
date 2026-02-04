@@ -18,7 +18,7 @@ function RegisterPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://srijan-2026.onrender.com/api/v1/user/register",
+        "https://srijan-2026-o5bu.onrender.com/api/v1/user/register",
         {
           fullname,
           email,
@@ -47,7 +47,7 @@ function RegisterPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://srijan-2026.onrender.com/api/v1/user/login",
+        "https://srijan-2026-o5bu.onrender.com/api/v1/user/login",
         {
           email,
           password,
