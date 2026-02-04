@@ -12,6 +12,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Seo from "../../components/Seo";
 import "./EventPage.css";
 
 const categories = [
@@ -37,7 +38,7 @@ const dates = [
 export default function EventPage() {
 
   const [activeCategory, setActiveCategory] = useState("ALL");
-  const [activeDate,setActiveDate]=useState("ALL");
+  const [activeDate, setActiveDate] = useState("ALL");
 
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
@@ -59,13 +60,18 @@ export default function EventPage() {
 
   return (
     <div className="event-page-container">
+      <Seo
+        title="Events | Srijan 2026"
+        description="Get ready to be swept away by a whirlwind of creativity, talent, and pure entertainment! Srijan 2026 presents an electrifying lineup of events that will ignite your senses and leave you spellbound. From soul-stirring performances to adrenaline-pumping competitions, there's something for everyone to enjoy. Don't miss out on the most happening event of the year!"
+        url="https://srijan2026.vercel.app/events"
+      />
       <div className="event-page-content">
         <PageHeader
           title="EVENTS"
           // subtitle="Explore the vibrant spectrum of cultural celebrations"
-          subtitle="If you have purchased pass for 1 DAY in that case you can only register for DAY 1 events i.e. 6th Feb on the website , If you have purchased pass for 2 DAYS in that case you can only register for DAY 1 & 2 events i.e. 6th and 7th Feb on the website,
+          subtitle="If you have purchased pass for 1 DAY in that case you can only register for DAY 1 events i.e. 5th and 6th Feb on the website , If you have purchased pass for 2 DAYS in that case you can only register for DAY 1 & 2 events i.e. 5th, 6th and 7th Feb on the website,
 
-          If you have purchased pass for 3 DAYS in that case you can register for DAY 1,2 & 3 events i.e. 6th, 7th and 8th Feb on the website,
+          If you have purchased pass for 3 DAYS in that case you can register for DAY 1,2 & 3 events i.e. 5th, 6th, 7th and 8th Feb on the website,
           "
           showBackButton={true}
           backPath="/"

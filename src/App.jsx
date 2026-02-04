@@ -77,25 +77,25 @@ function App() {
 
       <div className="content-root">
         <Routes>
-  <Route
-    path="/"
-    element={
-      <HomePage
-        onAnimationComplete={handleAnimationComplete}
-        skipAnimation={hasPlayedAnimation}
-      />
-    }
-  />
-  <Route path="/gallery" element={<GalleryPage />} />
-  <Route path="/events" element={<EventPage />} />
-  <Route path="/passes" element={<Passes/>} />  {/* ← YE NEW */}
-  <Route path="/sponsors" element={<SponsorPage />} />
-  <Route path="/merchandise" element={<MerchPage />} />
-  <Route path="/team" element={<TeamPage />} />
-  <Route path="/register" element={<RegisterPage />} />
-  <Route path="/profile" element={<Profile />} />
-  <Route path="/add-event" element={<AddEventPage />} />
-</Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                onAnimationComplete={handleAnimationComplete}
+                skipAnimation={hasPlayedAnimation}
+              />
+            }
+          />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/events" element={<EventPage />} />
+          <Route path="/passes" element={<Passes />} />  {/* ← YE NEW */}
+          <Route path="/sponsors" element={<SponsorPage />} />
+          <Route path="/merchandise" element={<MerchPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/add-event" element={<AddEventPage />} />
+        </Routes>
 
 
         {!isHomePage && <Footer />}

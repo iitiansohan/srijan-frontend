@@ -1,5 +1,6 @@
 import './Passes.css';
 import PageHeader from '../components/PageHeader/PageHeader';
+import Seo from '../components/Seo';
 
 import rhythmBasic from '/rhythm.png';
 import grooveBasic from '/groove.png';
@@ -250,6 +251,11 @@ function PassCard({ name, level, days, price, features, image, exclusions }) {
 
   return (
     <div className="w-full max-w-[632px] mx-auto rounded-2xl overflow-hidden relative transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(255,209,102,0.2)]">
+      <Seo
+        title="Passes | Srijan 2026"
+        description="Unlock the ultimate Srijan 2026 experience with our exclusive passes! Choose from Rhythm, Groove, or Carnival passes to access all events, star nights, and more. Book now for an unforgettable celebration of talent and entertainment!"
+        url="https://srijan2026.vercel.app/passes"
+      />
       <div className="relative h-[180px] sm:h-[200px]">
         <img src={image} alt={`${name} pass`} className="w-full h-full object-cover" />
       </div>

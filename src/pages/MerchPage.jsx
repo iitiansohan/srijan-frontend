@@ -1,4 +1,5 @@
 import PageHeader from "../components/PageHeader/PageHeader";
+import Seo from "../components/Seo";
 import { motion } from "framer-motion";
 import MerchCard from "../components/MerchCard";
 import tshirtFront from "/tshirtFront.png"
@@ -22,6 +23,11 @@ function MerchPage() {
 
   return (
     <div className="pb-30">
+      <Seo
+        title="Merchandise | Srijan 2026"
+        description="Grab your exclusive Srijan 2026 merchandise now! Shop stylish t-shirts and hoodies to commemorate the ultimate cultural fest. Limited stock available!"
+        url="https://srijan2026.vercel.app/merchandise"
+      />
       <PageHeader
         title="MERCHANDISE"
         subtitle="Explore the vibrant spectrum of cultural celebrations"
@@ -41,7 +47,7 @@ function MerchPage() {
             viewport={{ once: true }}
             className="w-85"
           >
-            <MerchCard event={event} index={i}/>
+            <MerchCard event={event} index={i} />
           </motion.div>
         ))}
       </div>

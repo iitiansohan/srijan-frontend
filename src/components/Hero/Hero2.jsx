@@ -87,7 +87,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   );
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const targetDate = new Date("2026-02-06T00:00:00");
+  const targetDate = new Date("2026-02-05T00:00:00");
 
   const containerRef = useRef(null);
 

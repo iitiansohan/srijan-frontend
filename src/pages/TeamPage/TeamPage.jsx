@@ -1,61 +1,23 @@
 import "./TeamPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader";
+import Seo from "../../components/Seo";
 import { motion } from "framer-motion";
 import { FaLinkedinIn, FaInstagram, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import teamImages from "../../data/TeamImages";
 
-import atharv from "./ProfileImage/atharv.jpg"
-import UDBHAV from "./ProfileImage/UDBHAV.JPG"
-import Yamali from "./ProfileImage/Yamali.jpg"
-import Guguloth from "./ProfileImage/Guguloth.jpg"
-import Adityashah from "./ProfileImage/Adityashah.jpg"
-import Jagana from "./ProfileImage/Jagana.jpg"
-import Nitin from "./ProfileImage/Nitin.jpeg"
-import Jatin from "./ProfileImage/Jatin.jpg"
-import Sai_Prasad from "./ProfileImage/Sai_Prasad.webp"
-import Diksha from "./ProfileImage/Diksha.jpg"
-import Surendra_Mojawat from "./ProfileImage/Surendra_Mojawat.jpg"
-import Adishree_Kundu from "./ProfileImage/Adishree_Kundu.jpg"
-import Azmeera_jenthulal from "./ProfileImage/Azmeera_jenthulal.jpg"
-import Shreyansh_Bhushan from "./ProfileImage/Shreyansh_Bhushan.jpeg"
-import Lokesh from "./ProfileImage/Lokesh.jpg"
-import Pragati_Kumari from "./ProfileImage/Pragati_Kumari.jpg"
-import Kolli_Praneeth from "./ProfileImage/Kolli_Praneeth.jpg"
-import Debayan_Chowdhury from "./ProfileImage/Debayan_Chowdhury.jpg"
-import Lakhan_singh from "./ProfileImage/Lakhan_singh.jpg"
-import Abhiram from "./ProfileImage/Abhiram.jpg"
-import Ashmita from "./ProfileImage/Ashmita.jpeg"
-import Kirti_Gupta from "./ProfileImage/Kirti_Gupta.jpg"
-import Aneesh_Verma from "./ProfileImage/Aneesh_Verma.jpeg"
-import Prioma_Chakraborty from "./ProfileImage/Prioma_Chakraborty.jpeg"
-import Gajula_Kousar from "./ProfileImage/Gajula_Kousar.jpeg"
-import SANATAN_BAGARIA from "./ProfileImage/SANATAN_BAGARIA.jpeg"
-import img1 from "./ProfileImage/11.jpg"
-import Sohan from "./ProfileImage/Sohan.jpg"
-import Arman from "./ProfileImage/Arman.jpg"
-import Sekhar from "./ProfileImage/Sekhar.jpg"
-import Aagam from "./ProfileImage/Aagam.jpg"
-import Bhumi from "./ProfileImage/Bhumi.jpg"
-import Adari from "./ProfileImage/Adari.jpg"
-import Atharv1 from "./ProfileImage/Atharv1.jpeg"
-import Tanishka from "./ProfileImage/Tanishka.jpeg"
-import Suryansh from "./ProfileImage/Suryansh.jpg"
-import Varshitha from "./ProfileImage/Varshitha.jpg"
-import Sayon from "./ProfileImage/Sayon.jpg"
-import Swagat from "./ProfileImage/Swagat.jpg"
-import Dhanya from "./ProfileImage/Dhanya.jpg"
-import Samiksha from "./ProfileImage/Samiksha.jpg"
-import devang from "./ProfileImage/devang.jpeg"
-import divyanshu from "./ProfileImage/divyanshu.jpeg"
-import sawan from "./ProfileImage/sawan.jpg"
-import Harsh from "./ProfileImage/Harsh.jpg"
-import Yash from "./ProfileImage/Yash.jpg"
-import shaumya from "./ProfileImage/shaumya.jpg"
-import MadhulikaGupta from "./ProfileImage/MadhulikaGupta.png"
-import PriyanshKedia from "./ProfileImage/PriyanshKedia.png"
-import Suresh from "./ProfileImage/Suresh.png"
-import Rajarsree from "./ProfileImage/Rajarsee.jpg"
+// Map team images from Cloudinary array
+const [
+  shaumya, sawan, image_2, divyanshu, devang, atharv, Yash, Yamali, Varshitha,
+  UDBHAV, Tanishka, Swagat, Suryansh, Suresh, Surendra_Mojawat, Sohan,
+  Shreyansh_Bhushan, Sekhar, Sayon, Samiksha, Sai_Prasad, SANATAN_BAGARIA,
+  PriyanshKedia, Prioma_Chakraborty, Pragati_Kumari, Nitin, MadhulikaGupta,
+  Lokesh, Lakhan_singh, Kolli_Praneeth, Kirti_Gupta, Jatin, Jagana, Harsh,
+  Guguloth, Gajula_Kousar, Diksha, Dhanya, Debayan, Debayan_Chowdhury, Bhumi,
+  Azmeera_jenthulal, Atharv1, Ashmita, Arman, Aneesh_Verma, Adityashah,
+  Adishree_Kundu, Adari, Abhiram, Aagam, img1
+] = teamImages;
 
 const teamSections = [
   {
@@ -123,14 +85,6 @@ const teamSections = [
         instagram: "https://www.instagram.com/devang772?igsh=MTd6ZjA5ZnFrdGVvNw==",
       },
       {
-        name: "Divyanshu",
-        surname: "Choubey",
-        role: "Member",
-        img: divyanshu,
-        linkedin: "https://www.linkedin.com/in/divyanshu8210",
-        instagram: "https://www.instagram.com",
-      },
-      {
         name: "harsh",
         surname: "kumar",
         role: "Member",
@@ -139,20 +93,28 @@ const teamSections = [
         instagram: "https://www.instagram.com/harsh9357/",
       },
       {
+        name: "Sayan",
+        surname: "Sekhar  Ghosh",
+        role: "Member",
+        img: Sekhar,
+        linkedin: "https://www.linkedin.com/in/sayan-sekhar-ghosh",
+        instagram: "https://www.instagram.com/sekhar_sayan",
+      },
+      {
+        name: "Divyanshu",
+        surname: "Choubey",
+        role: "Member",
+        img: divyanshu,
+        linkedin: "https://www.linkedin.com/in/divyanshu8210",
+        instagram: "https://www.instagram.com",
+      },
+      {
         name: "sawan",
         surname: "sharma",
         role: "Member",
         img: sawan,
         linkedin: "https://www.linkedin.com/in/sawan-k-sharma-63987b325/",
         instagram: "https://www.instagram.com/sawankshrma/",
-      },
-      {
-        name: "Sayan ",
-        surname: "Ghosh",
-        role: "Member",
-        img: Sekhar,
-        linkedin: "https://www.linkedin.com/in/sayan-sekhar-ghosh",
-        instagram: "https://www.instagram.com/sekhar_sayan",
       },
       {
         name: "Aagam",
@@ -182,7 +144,7 @@ const teamSections = [
         name: "Rajarsee ",
         surname: "Chakraborty ",
         role: "Member",
-        img: Rajarsree,
+        img: img1,
         linkedin: "https://www.linkedin.com/in/rajarsee-chakraborty-919bb531b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         instagram: "https://www.instagram.com/rajarseechakraborty5?igsh=d3d2ZHphYWdlcDUz",
       },
@@ -476,7 +438,7 @@ const teamSections = [
         instagram: "https://instagram.com",
       },
       {
-        name: "PRANEET",
+        name: "PRANEETH",
         surname: "KOLLI",
         role: "Co-Head",
         img: Kolli_Praneeth,
@@ -719,6 +681,7 @@ const teamSections = [
 
 function TeamPage() {
   const [isWebDevExpanded, setIsWebDevExpanded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const renderTeamMembers = (members, isWebDev = false) => {
     let displayMembers = members;
@@ -728,14 +691,29 @@ function TeamPage() {
       displayMembers = members.slice(0, 3);
     }
 
-    return displayMembers.map((member, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.15 }}
-        whileHover={{ scale: 1.07 }}
+    return displayMembers.map((member, index) => {
+      const imgKey = `${member.name}-${member.surname}`;
+
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.15 }}
+          whileHover={{ scale: 1.07 }}
+          onViewportEnter={() => {
+            if (!loadedImages[imgKey]) {
+              const img = new Image();
+              img.src = member.img;
+              img.onload = () => {
+                setLoadedImages((prev) => ({
+                  ...prev,
+                  [imgKey]: member.img,
+                }));
+              };
+            }
+          }}
         className="group relative rounded-2xl p-0.5 pb-8
               w-[260px] sm:w-[280px]
               bg-linear-to-br from-yellow-400 to-yellow-600
@@ -745,7 +723,12 @@ function TeamPage() {
         <div
           className="relative rounded-2xl overflow-hidden flex flex-col justify-end
                       h-[350px] bg-center bg-cover"
-          style={{ backgroundImage: `url(${member.img})` }}
+          style={{
+          backgroundImage: loadedImages[imgKey]
+            ? `url(${loadedImages[imgKey]})`
+            : "none",
+        }}
+
         >
           <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
             {member.linkedin && (
@@ -815,11 +798,17 @@ function TeamPage() {
           </div>
         </div>
       </motion.div>
-    ));
+    );
+  });
   };
 
   return (
     <div className="min-h-screen bg-linear-to-b from transparen-[#08061E] via-[#301258] to-[#48286f]  pb-24">
+      <Seo
+        title="Team | Srijan 2026"
+        description="Meet the passionate individuals behind Srijan 2026! Discover the dedicated team members who work tirelessly to bring you an unforgettable cultural experience."
+        url="https://srijan2026.vercel.app/team"
+      />
       <PageHeader
         title="TEAM"
         subtitle="Explore the vibrant spectrum of cultural celebrations"
