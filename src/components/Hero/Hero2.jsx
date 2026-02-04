@@ -55,8 +55,6 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
     }
   }
 
-  // del later
-  console.log(import.meta.env.VITE_API_URL);
 
   // async function logout() {
   //   try {
