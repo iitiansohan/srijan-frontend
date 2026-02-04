@@ -6,6 +6,8 @@ import EventCard from "./EventCard";
 import "./AddEventPage.css";
 
 const AddEventPage = () => {
+    const apiBaseUrl = process.env.API_BASE_URL || 'https://srijan-2026-o5bu.onrender.com/';
+
     const navigate = useNavigate();
     const [showPreview, setShowPreview] = useState(false);
     const [formData, setFormData] = useState({
@@ -57,7 +59,7 @@ const AddEventPage = () => {
         e.preventDefault();
         try {
             const response = await fetch(
-                "https://srijan-2026-o5bu.onrender.com/v1/events/create",
+                `${apiBaseUrl}v1/events/create`,
                 {
                     method: "POST",
                     headers: {

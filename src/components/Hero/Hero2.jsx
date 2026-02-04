@@ -14,6 +14,8 @@ import lightCloudBottom from "../../assets/Light Cloud Bottom.png";
 import GradientInterval from "./GradientInterval";
 import Myntra from "/sponsers/Myntra.png"
 
+const apiBaseUrl = process.env.API_BASE_URL || 'https://srijan-2026-o5bu.onrender.com/';
+
 const navItems = [
   { path: "/", label: "HOME", hindi: "गृह" },
   { path: "/events", label: "EVENTS", hindi: "कार्यक्रम" },
@@ -47,7 +49,7 @@ const Hero2 = ({ onAnimationComplete, skipAnimation: skipAnimationProp }) => {
   async function getUser() {
     try {
       const res = await axios.get(
-        "https://srijan-2026-o5bu.onrender.com/api/v1/user/current-user",
+        `${apiBaseUrl}api/v1/user/current-user`,
         { withCredentials: true }
       );
       setUser(res.data.data.fullname);

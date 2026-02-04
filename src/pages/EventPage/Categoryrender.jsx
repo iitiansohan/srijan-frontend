@@ -12,6 +12,8 @@ import LITERACY from "./Images/LITERACY.jpg";
 import MUSIC from "./Images/MUSIC.jpg";
 
 export default function Display({ category , date }) {
+  const apiBaseUrl = process.env.API_BASE_URL || 'https://srijan-2026-o5bu.onrender.com/';
+
   const [allEvents, setAllEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -21,8 +23,8 @@ export default function Display({ category , date }) {
     const fetchEvents = async () => {
       try {
         const url = category === "ALL"
-          ? "https://srijan-2026-o5bu.onrender.com/api/v1/event/all"
-          : `https://srijan-2026-o5bu.onrender.com/api/v1/event/category/${category}`;
+          ? `${apiBaseUrl}api/v1/event/all`
+          : `${apiBaseUrl}api/v1/event/category/${category}`;
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to fetch events");
         const data = await response.json();

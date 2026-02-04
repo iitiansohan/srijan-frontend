@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
 function RegisterPage() {
+  const apiBaseUrl = process.env.API_BASE_URL || 'https://srijan-2026-o5bu.onrender.com/';
+
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ function RegisterPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://srijan-2026-o5bu.onrender.com/api/v1/user/register",
+        `${apiBaseUrl}api/v1/user/register`,
         {
           fullname,
           email,
@@ -47,7 +49,7 @@ function RegisterPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://srijan-2026-o5bu.onrender.com/api/v1/user/login",
+        `${apiBaseUrl}api/v1/user/login`,
         {
           email,
           password,

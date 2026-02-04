@@ -1,7 +1,8 @@
 import axios from 'axios';
+const apiBaseUrl = process.env.API_BASE_URL || 'https://srijan-2026-o5bu.onrender.com/';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://srijan-2026-o5bu.onrender.com/api/v1',
+  baseURL: `${apiBaseUrl}api/v1`,
   withCredentials: true,
 });
 
@@ -15,7 +16,7 @@ axiosInstance.interceptors.response.use(
 
       try {
         await axios.get(
-          'https://srijan-2026-o5bu.onrender.com/api/v1/user/refresh-token',
+          `${apiBaseUrl}api/v1/user/refresh-token`,
           { withCredentials: true }
         );
 
