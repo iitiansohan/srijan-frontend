@@ -34,10 +34,8 @@ export default function QR() {
         setIsGenerating(true);
 
         try {
-            // Encode the email
             const encodedEmail = encode(glamfestEmail);
 
-            // Generate QR code as data URL
             const qrDataUrl = await QRCode.toDataURL(encodedEmail, {
                 width: 500,
                 margin: 2,
@@ -47,24 +45,32 @@ export default function QR() {
                 },
             });
 
-            // Create a download link
+            const safeEmail = glamfestEmail
+                .replace(/[^a-z0-9]/gi, "_")
+                .toLowerCase();
+
             const link = document.createElement("a");
             link.href = qrDataUrl;
-            link.download = `glamfest-qr-${glamfestEmail}.png`;
+            link.download = `glamfest-qr-${safeEmail}.png`;
+
             document.body.appendChild(link);
             link.click();
-            document.body.removeChild(link);
 
-            toast.success("QR Code generated and downloaded successfully!");
-            setShowQRModal(false);
-            setGlamfestEmail("");
+            setTimeout(() => {
+                document.body.removeChild(link);
+                setShowQRModal(false);
+                setGlamfestEmail("");
+            }, 300);
+
+            toast.success("QR Code downloaded successfully!");
         } catch (error) {
-            console.error("Error generating QR code:", error);
-            toast.error("Failed to generate QR code. Please try again.");
+            console.error(error);
+            toast.error("Failed to generate QR code");
         } finally {
             setIsGenerating(false);
         }
     }
+
 
     return (
         <div className="w-full min-h-screen">
